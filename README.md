@@ -24,6 +24,10 @@ will still run as usual, but without any visible code.
 
     require 'acme/bleach'
 
+## Acknowledgements
+
+Damian Conway for the [original Perl version](http://search.cpan.org/~dconway/Acme-Bleach-1.150/lib/Acme/Bleach.pm) from which I stole liberally.
+
 ## Contributing
 
 1. Fork it
