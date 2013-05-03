@@ -1,6 +1,6 @@
 # Acme::Bleach
 
-TODO: Write a gem description
+A silly gem that cleans your source file.
 
 ## Installation
 
@@ -18,7 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Just require this gem and the first time you run your script your file will be
+cleaned of all the messy things like printable characters.  The next time it
+will still run as usual, but without any visible code.
+
+    require 'acme/bleach'
 
 ## Contributing
 
