@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = "acme-bleach"
   spec.version       = Acme::Bleach::VERSION
   spec.authors       = ["Jason King"]
-  spec.email         = ["jasonk@amcoonline.net"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.email         = ["jk@handle.it"]
+  spec.description   = %q{The first time you run your code after requiring this module it will bleach your file, your code still runs but you can no longer see it, needs Ruby >= 1.9}
+  spec.summary       = %q{Bleaches your source file}
   spec.homepage      = ""
   spec.license       = "MIT"
 
