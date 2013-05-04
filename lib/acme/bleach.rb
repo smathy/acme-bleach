@@ -19,21 +19,26 @@ module Acme
       end
     end
 
-    content = File.read $0
+    begin
+      content = File.read $0
 
-    m = content.match %r{\A(?<before>.*)^(?<require>\s*require\s+(?<quote>['"])acme/bleach\k<quote>[^\n]*\n)(?<after>.*)\z}m
+      m = content.match %r{\A(?<before>.*)^(?<require>\s*require\s+(?<quote>['"])acme/bleach\k<quote>[^\n]*\n)(?<after>.*)\z}m
 
-    before = m['before']
-    req = m['require']
-    after = m['after']
+      before = m['before']
+      req = m['require']
+      after = m['after']
 
-    if bleached? after
-      eval before + brighten( after)
-      exit
-    else
-      File.open $0, 'w' do |f|
-        f.puts before + req + whiten( after)
+      if bleached? after
+        eval before + brighten( after)
+        exit
+      else
+        File.open $0, 'w' do |f|
+          f.puts before + req + whiten( after)
+        end
       end
+    rescue Errno::ENOENT => e
+      $stderr.puts "I got an error which might be because of how you tried to use this gem, it's designed to be `require`d in a `.rb` file that you run directly, not in Rails or another gem, anyway here's the exception I got:"
+      raise
     end
   end
 end
